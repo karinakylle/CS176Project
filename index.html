@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Ang, Datiles, Santos">
+	<meta name="description" content="This app guides its users to proper breathing techniques and exercises using clear visual guides and intuitive design. The exercises in this app can also be custom made depending on the user's needs, and also comes with various accessibility features for those with special needs. This app was brought up in mind of those who require to do breathing exercises regularly.">
+	<meta name="theme-color" content="#245619"/>
+
+	<meta property="og:title" content="Breathing Exercise Assistance" />
+	<meta property="og:description" content="This app guides its users to proper breathing techniques and exercises using clear visual guides and intuitive design. The exercises in this app can also be custom made depending on the user's needs, and also comes with various accessibility features for those with special needs. This app was brought up in mind of those who require to do breathing exercises regularly." />
+	<meta property="og:type" content="website" />
+	<!--<meta property="og:url" content="https://raimop.github.io/breath/" />
+	<meta property="og:image" content="https://raimop.github.io/breath/images/breath-og.png" /> -->
+
+	<link rel="manifest" href="/manifest.webmanifest">
+	<link rel="apple-touch-icon" href="/images/breathe-192.png">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="style.css">
+
+	<title>Breathing Exercise Assistance</title>
+
+	<script src="index.js" defer></script>
+</head>
+<body class="bg img-0">
+	<audio src="music/Serenity_fesliyanstudios.com_David_Renda.mp3" loop></audio>
+	<header>
+		<div class="header--container">
+			<div class="logo--section">
+				<img src="images/circles.svg" alt="Breathe logo" class="logo--image">
+				<span class="logo--text">Breathing Exercise Assistance</span>
+			</div>
+			<span id="settings--icon" class="settings--icon">⚙️</span>
+		</div>
+	</header>
+	<section id="overlay" class="overlay">
+		<div id="overlay--content" class="overlay--content">
+			<form id="settings-form" class="settings-form" onsubmit="event.preventDefault();">
+				<div>
+						<label for="breathe-in">Breathe in: </label><input type="number" name="breathe-in" id="breathe-in" min="1" value="3"><span>s</span><br>
+						<input type="checkbox" name="breathe-lock" id="breathe-lock" checked><label for="breathe-lock">Lock?</label><br>
+						<label for="breathe-out">Breathe out: </label><input type="number" name="breathe-out" id="breathe-out" min="1" value="3"><span>s</span>
+				</div>
+				<div>
+						<label for="hold-between">Hold in between: </label><input type="number" name="hold-between" id="hold-between" min="0" value="2"><span>s</span><br>
+						<input type="checkbox" name="hold-lock" id="hold-lock"><label for="hold-lock">Lock?</label><br>
+						<label for="hold-end">Hold after breathing out: </label><input type="number" name="hold-end" id="hold-end" min="0" value="0"><span>s</span>
+				</div>
+				<div>
+					<input type="checkbox" name="time-remaining" id="time-remaining"><label for="time-remaining">Show time remaining?</label>
+				</div>
+				<div>
+					<input type="checkbox" name="enter-fullscreen" id="enter-fullscreen" checked><label for="enter-fullscreen">Enter fullscreen?</label>
+				</div>
+				<div>
+					<input type="checkbox" name="audio" id="audio" checked><label class="audio" for="audio">Audio?</label>
+				</div>
+				<div>
+					<button class="add-button">Add to home screen</button>
+				</div>
+			</form>
+		</div>
+	</section>
+	<main>
+			<section id="circle">
+				<div class="circle center">
+					<div class="circle--inner"></div>
+				</div>
+				<p id="text" class="text">Click on<br/> this circle <br/> to start</p>
+			</section>
+	</main>
+	<footer>
+		<div class="footer--container">
+			Made by Karina Ang, Gabriel Datiles, and Hans Santos, CS176 2021<br>
+	</div>
+	</footer>
+	<script>
+		if('serviceWorker' in navigator){
+			navigator.serviceWorker.register('sw.js')
+					.then(reg => console.log('service worker registered'))
+					.catch(err => console.log('service worker not registered', err));
+		}
+	</script>
+</body>
+</html>

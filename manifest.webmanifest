@@ -1,0 +1,22 @@
+{
+	"name": "Breathing Exercise Assistance",
+	"short_name": "Breathing Exercise Assistance",
+	"start_url": "/index.html",
+	"description": "This app guides its users to proper breathing techniques and exercises using clear visual guides and intuitive design. The exercises in this app can also be custom made depending on the user's needs, and also comes with various accessibility features for those with special needs. This app was brought up in mind of those who require to do breathing exercises regularly.",
+	"display": "fullscreen",
+	"background_color": "#232d44",
+	"theme_color": "#232d44",
+	"orientation": "portrait-primary",
+	"icons": [
+		{
+			"src": "/images/breathe-192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "/images/breathe-512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	]
+}
